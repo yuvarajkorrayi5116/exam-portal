@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal - Online Examination System</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-DpH4ZRDd.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>EduPortal</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Login ▼</a>
+                    <div class="dropdown-content">
+                        <a href="login.html?type=student">Student Login</a>
+                        <a href="login.html?type=admin">Admin Login</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="registration.html" class="nav-link">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="test.html" class="nav-link">Test</a>
+                </li>
+                <li class="nav-item">
+                    <a href="result.html" class="nav-link">Result</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Welcome to EduPortal</h1>
+                <h2>Your Gateway to Online Examinations</h2>
+                <p>Experience seamless online testing with our advanced examination portal. Register, take tests, and view results all in one place.</p>
+                <div class="hero-buttons">
+                    <a href="registration.html" class="btn btn-primary">Get Started</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Student with Laptop Illustration -->
+                    <circle cx="200" cy="120" r="40" fill="#FFE4B5"/>
+                    <circle cx="200" cy="115" r="35" fill="#F4C2A1"/>
+                    <path d="M175 105 Q185 95 200 95 Q215 95 225 105 Q225 125 200 130 Q175 125 175 105Z" fill="#8B4513"/>
+                    <circle cx="190" cy="115" r="2" fill="#000"/>
+                    <circle cx="210" cy="115" r="2" fill="#000"/>
+                    <path d="M195 125 Q200 130 205 125" stroke="#000" stroke-width="1.5" fill="none"/>
+                    <rect x="160" y="160" width="80" height="60" rx="8" fill="#4A90E2"/>
+                    <rect x="170" y="170" width="60" height="40" fill="#87CEEB"/>
+                    <rect x="155" y="220" width="90" height="40" fill="#2E5BBA"/>
+                    <circle cx="180" cy="240" r="8" fill="#FFE4B5"/>
+                    <circle cx="220" cy="240" r="8" fill="#FFE4B5"/>
+                    <path d="M180 232 L185 220" stroke="#FFE4B5" stroke-width="6"/>
+                    <path d="M220 232 L215 220" stroke="#FFE4B5" stroke-width="6"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section (Hidden by default) -->
+    <section class="dashboard" id="dashboardSection" style="display: none;">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Welcome back, <span id="userName">Student</span>!</h2>
+                <button onclick="logout()" class="btn btn-danger">Logout</button>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Upcoming Tests</h3>
+                    <div class="test-list">
+                        <div class="test-item">
+                            <span>Mathematics Test</span>
+                            <span>Tomorrow, 10:00 AM</span>
+                        </div>
+                        <div class="test-item">
+                            <span>Physics Test</span>
+                            <span>Dec 25, 2:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Recent Results</h3>
+                    <div class="result-list">
+                        <div class="result-item">
+                            <span>Computer Science</span>
+                            <span class="score">85/100</span>
+                        </div>
+                        <div class="result-item">
+                            <span>English</span>
+                            <span class="score">92/100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Progress</h3>
+                    <div class="progress-stats">
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Tests Taken</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">88%</span>
+                            <span class="stat-label">Average Score</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Study Materials</h3>
+                    <div class="materials-list">
+                        <a href="#" class="material-link">Mathematics Notes</a>
+                        <a href="#" class="material-link">Physics Formulas</a>
+                        <a href="#" class="material-link">Sample Papers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="featuresSection">
+        <div class="container">
+            <h2>Why Choose EduPortal?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Comprehensive Testing</h3>
+                    <p>Wide range of subjects and topics covered with detailed question banks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Real-time Results</h3>
+                    <p>Get instant results and detailed analytics of your performance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Platform</h3>
+                    <p>Advanced security measures to ensure fair and secure examinations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Take tests on any device with our responsive design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About EduPortal</h2>
+                    <p>EduPortal is a cutting-edge online examination platform designed to revolutionize the way educational assessments are conducted. Our platform provides a seamless, secure, and user-friendly environment for both students and administrators.</p>
+                    <p>With features like real-time monitoring, instant results, and comprehensive analytics, we ensure that the examination process is fair, efficient, and transparent.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>10,000+</h3>
+                            <p>Students</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Tests Conducted</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Institutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EduPortal</h3>
+                    <p>Your trusted partner in online education and assessment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="test.html">Tests</a></li>
+                        <li><a href="result.html">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@eduportal.com</p>
+                    <p>Phone: +1 234 567 8900</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduPortal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
