@@ -116,5 +116,7 @@ Developed for educational purposes to demonstrate a functional online examinatio
 
 ---
 
-I can also add **screenshots & live demo instructions** to make it more attractive.
-Do you want me to include those next?
+📱 Access the Portal
+You can access EduPortal directly via the following link:
+
+👉 EduPortal Online Examination Portal
