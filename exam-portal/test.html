@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - EduPortal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>EduPortal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Login ▼</a>
+                    <div class="dropdown-content">
+                        <a href="login.html?type=student">Student Login</a>
+                        <a href="login.html?type=admin">Admin Login</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="registration.html" class="nav-link">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="test.html" class="nav-link active">Test</a>
+                </li>
+                <li class="nav-item">
+                    <a href="result.html" class="nav-link">Result</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Test Instructions Section -->
+    <section class="test-instructions" id="testInstructions">
+        <div class="container">
+            <div class="instructions-container">
+                <div class="instructions-header">
+                    <h2>Test Instructions</h2>
+                    <p>Please read the following instructions carefully before starting the test</p>
+                </div>
+                
+                <div class="instructions-content">
+                    <div class="instruction-section">
+                        <h3>📋 General Instructions</h3>
+                        <ul>
+                            <li>This test contains multiple choice questions</li>
+                            <li>Each question has 4 options, select the most appropriate answer</li>
+                            <li>You can navigate between questions using the navigation panel</li>
+                            <li>Your answers are automatically saved as you proceed</li>
+                            <li>Submit the test before the time limit expires</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instruction-section">
+                        <h3>⏱️ Time Management</h3>
+                        <ul>
+                            <li>Total time allowed: <strong>60 minutes</strong></li>
+                            <li>Timer will start as soon as you click "Start Test"</li>
+                            <li>Test will auto-submit when time expires</li>
+                            <li>Keep track of remaining time displayed at the top</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instruction-section">
+                        <h3>🔧 Technical Requirements</h3>
+                        <ul>
+                            <li>Stable internet connection is required</li>
+                            <li>Do not refresh or close the browser during the test</li>
+                            <li>Use full-screen mode for better experience</li>
+                            <li>Disable any pop-up blockers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="instruction-section">
+                        <h3>📏 Test Rules</h3>
+                        <ul>
+                            <li>No external help or reference material allowed</li>
+                            <li>Calculator use is permitted for mathematical questions</li>
+                            <li>Any form of cheating will result in disqualification</li>
+                            <li>One attempt only - you cannot retake this test</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="test-info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">📝</div>
+                        <h4>Questions</h4>
+                        <p>20 Questions</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h4>Duration</h4>
+                        <p>60 Minutes</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🎯</div>
+                        <h4>Total Marks</h4>
+                        <p>100 Points</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">✅</div>
+                        <h4>Passing Score</h4>
+                        <p>40 Points</p>
+                    </div>
+                </div>
+                
+                <div class="start-test-section">
+                    <div class="agreement-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms">
+                            I have read and understood all the instructions and agree to the test conditions
+                        </label>
+                    </div>
+                    <button class="btn btn-primary start-test-btn" id="startTestBtn" onclick="startTest()" disabled>
+                        Start Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Section -->
+    <section class="test-section" id="testSection" style="display: none;">
+        <div class="test-header">
+            <div class="container">
+                <div class="test-header-content">
+                    <h3>Mathematics Test</h3>
+                    <div class="test-timer">
+                        <span class="timer-label">Time Remaining:</span>
+                        <span class="timer-display" id="timerDisplay">60:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-container">
+            <div class="test-sidebar">
+                <div class="question-navigation">
+                    <h4>Questions</h4>
+                    <div class="question-grid" id="questionGrid">
+                        <!-- Question navigation buttons will be generated here -->
+                    </div>
+                    <div class="navigation-legend">
+                        <div class="legend-item">
+                            <span class="legend-color answered"></span>
+                            <span>Answered</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color current"></span>
+                            <span>Current</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color unanswered"></span>
+                            <span>Unanswered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-content">
+                <div class="question-container">
+                    <div class="question-header">
+                        <span class="question-number">Question <span id="currentQuestionNum">1</span> of 20</span>
+                        <span class="question-marks">5 marks</span>
+                    </div>
+                    
+                    <div class="question-content">
+                        <div class="question-text" id="questionText">
+                            <!-- Question will be displayed here -->
+                        </div>
+                        
+                        <div class="options-container" id="optionsContainer">
+                            <!-- Options will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="test-controls">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                    <button class="btn btn-secondary" id="nextBtn" onclick="nextQuestion()">Next</button>
+                    <button class="btn btn-danger" id="submitBtn" onclick="submitTest()">Submit Test</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Confirmation Modal -->
+    <div class="modal" id="submitModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Submit Test</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to submit the test?</p>
+                <div class="submit-stats">
+                    <p>Answered: <span id="answeredCount">0</span>/20</p>
+                    <p>Remaining Time: <span id="remainingTime">--:--</span></p>
+                </div>
+                <p><strong>Note:</strong> You cannot change your answers after submission.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeSubmitModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="confirmSubmit()">Yes, Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>

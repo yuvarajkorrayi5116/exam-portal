@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - EduPortal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>EduPortal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Login ▼</a>
+                    <div class="dropdown-content">
+                        <a href="login.html?type=student">Student Login</a>
+                        <a href="login.html?type=admin">Admin Login</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="registration.html" class="nav-link">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="test.html" class="nav-link">Test</a>
+                </li>
+                <li class="nav-item">
+                    <a href="result.html" class="nav-link active">Result</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <h2>Test Results</h2>
+                <p>View your test performance and detailed analytics</p>
+            </div>
+
+            <!-- Results Summary -->
+            <div class="results-summary">
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <div class="summary-content">
+                        <h3>8</h3>
+                        <p>Tests Taken</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🎯</div>
+                    <div class="summary-content">
+                        <h3>85%</h3>
+                        <p>Average Score</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🏆</div>
+                    <div class="summary-content">
+                        <h3>6</h3>
+                        <p>Tests Passed</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">⭐</div>
+                    <div class="summary-content">
+                        <h3>92%</h3>
+                        <p>Best Score</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="results-table-container">
+                <h3>Test History</h3>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Subject</th>
+                            <th>Date Taken</th>
+                            <th>Score</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mathematics Quiz</td>
+                            <td>Mathematics</td>
+                            <td>Dec 20, 2024</td>
+                            <td>85/100</td>
+                            <td>A</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('math-quiz-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Physics Test</td>
+                            <td>Physics</td>
+                            <td>Dec 18, 2024</td>
+                            <td>92/100</td>
+                            <td>A+</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('physics-test-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Computer Science Quiz</td>
+                            <td>Computer Science</td>
+                            <td>Dec 15, 2024</td>
+                            <td>78/100</td>
+                            <td>B+</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('cs-quiz-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>English Test</td>
+                            <td>English</td>
+                            <td>Dec 12, 2024</td>
+                            <td>88/100</td>
+                            <td>A</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('english-test-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chemistry Quiz</td>
+                            <td>Chemistry</td>
+                            <td>Dec 10, 2024</td>
+                            <td>65/100</td>
+                            <td>B</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('chemistry-quiz-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Biology Test</td>
+                            <td>Biology</td>
+                            <td>Dec 8, 2024</td>
+                            <td>35/100</td>
+                            <td>F</td>
+                            <td><span class="status-badge failed">Failed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('biology-test-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>History Quiz</td>
+                            <td>History</td>
+                            <td>Dec 5, 2024</td>
+                            <td>72/100</td>
+                            <td>B</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('history-quiz-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Geography Test</td>
+                            <td>Geography</td>
+                            <td>Dec 3, 2024</td>
+                            <td>80/100</td>
+                            <td>B+</td>
+                            <td><span class="status-badge passed">Passed</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" onclick="viewDetailedResult('geography-test-1')">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Performance Chart -->
+            <div class="performance-chart-container">
+                <h3>Performance Trend</h3>
+                <div class="chart-placeholder">
+                    <p>📈 Your performance has been improving over time!</p>
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 35%;" title="Biology: 35%"></div>
+                        <div class="chart-bar" style="height: 72%;" title="History: 72%"></div>
+                        <div class="chart-bar" style="height: 80%;" title="Geography: 80%"></div>
+                        <div class="chart-bar" style="height: 65%;" title="Chemistry: 65%"></div>
+                        <div class="chart-bar" style="height: 88%;" title="English: 88%"></div>
+                        <div class="chart-bar" style="height: 78%;" title="Computer Science: 78%"></div>
+                        <div class="chart-bar" style="height: 92%;" title="Physics: 92%"></div>
+                        <div class="chart-bar" style="height: 85%;" title="Mathematics: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Result Modal -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 id="resultModalTitle">Test Results Detail</h3>
+                <span class="close-btn" onclick="closeResultModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="result-detail-container">
+                    <!-- Test Overview -->
+                    <div class="result-overview">
+                        <div class="overview-item">
+                            <label>Test Name:</label>
+                            <span id="detailTestName">Mathematics Quiz</span>
+                        </div>
+                        <div class="overview-item">
+                            <label>Date Taken:</label>
+                            <span id="detailDate">Dec 20, 2024</span>
+                        </div>
+                        <div class="overview-item">
+                            <label>Duration:</label>
+                            <span id="detailDuration">45 minutes</span>
+                        </div>
+                        <div class="overview-item">
+                            <label>Total Questions:</label>
+                            <span id="detailTotalQuestions">20</span>
+                        </div>
+                    </div>
+
+                    <!-- Score Summary -->
+                    <div class="score-summary">
+                        <div class="score-item">
+                            <div class="score-circle">
+                                <div class="score-text">
+                                    <span class="score-number" id="detailScore">85</span>
+                                    <span class="score-total">/100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-details">
+                            <div class="score-stat">
+                                <span class="stat-label">Questions Attempted:</span>
+                                <span class="stat-value" id="detailAttempted">18/20</span>
+                            </div>
+                            <div class="score-stat">
+                                <span class="stat-label">Correct Answers:</span>
+                                <span class="stat-value correct" id="detailCorrect">17</span>
+                            </div>
+                            <div class="score-stat">
+                                <span class="stat-label">Wrong Answers:</span>
+                                <span class="stat-value wrong" id="detailWrong">1</span>
+                            </div>
+                            <div class="score-stat">
+                                <span class="stat-label">Unanswered:</span>
+                                <span class="stat-value unanswered" id="detailUnanswered">2</span>
+                            </div>
+                            <div class="score-stat">
+                                <span class="stat-label">Accuracy:</span>
+                                <span class="stat-value" id="detailAccuracy">94.4%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question Analysis -->
+                    <div class="question-analysis">
+                        <h4>Question Analysis</h4>
+                        <div class="analysis-grid">
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q1</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q2</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item wrong">
+                                <span class="question-num">Q3</span>
+                                <span class="result-icon">✗</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q4</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q5</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q6</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q7</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q8</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q9</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q10</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q11</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q12</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q13</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q14</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q15</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q16</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q17</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item correct">
+                                <span class="question-num">Q18</span>
+                                <span class="result-icon">✓</span>
+                            </div>
+                            <div class="analysis-item unanswered">
+                                <span class="question-num">Q19</span>
+                                <span class="result-icon">-</span>
+                            </div>
+                            <div class="analysis-item unanswered">
+                                <span class="question-num">Q20</span>
+                                <span class="result-icon">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeResultModal()">Close</button>
+                <button class="btn btn-primary" onclick="printResult()">Print Result</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="result.js"></script>
+</body>
+</html>

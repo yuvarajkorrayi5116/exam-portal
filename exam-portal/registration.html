@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - EduPortal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>EduPortal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Login ▼</a>
+                    <div class="dropdown-content">
+                        <a href="login.html?type=student">Student Login</a>
+                        <a href="login.html?type=admin">Admin Login</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="registration.html" class="nav-link active">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="test.html" class="nav-link">Test</a>
+                </li>
+                <li class="nav-item">
+                    <a href="result.html" class="nav-link">Result</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-header">
+                <h2>Test Registration</h2>
+                <p>Register for upcoming tests and examinations</p>
+            </div>
+
+            <!-- Upcoming Tests Table -->
+            <div class="tests-table-container">
+                <h3>Upcoming Tests</h3>
+                <table class="tests-table">
+                    <thead>
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Subject</th>
+                            <th>Date & Time</th>
+                            <th>Duration</th>
+                            <th>Max Marks</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mid-Term Mathematics</td>
+                            <td>Mathematics</td>
+                            <td>Dec 25, 2024 - 10:00 AM</td>
+                            <td>2 hours</td>
+                            <td>100</td>
+                            <td>
+                                <button class="btn btn-primary register-btn" onclick="showRegistrationForm('math-mid-term')">
+                                    Register
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Physics Semester Exam</td>
+                            <td>Physics</td>
+                            <td>Dec 28, 2024 - 2:00 PM</td>
+                            <td>3 hours</td>
+                            <td>150</td>
+                            <td>
+                                <button class="btn btn-primary register-btn" onclick="showRegistrationForm('physics-semester')">
+                                    Register
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Computer Science Quiz</td>
+                            <td>Computer Science</td>
+                            <td>Jan 2, 2025 - 11:00 AM</td>
+                            <td>1 hour</td>
+                            <td>50</td>
+                            <td>
+                                <button class="btn btn-primary register-btn" onclick="showRegistrationForm('cs-quiz')">
+                                    Register
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>English Literature Test</td>
+                            <td>English</td>
+                            <td>Jan 5, 2025 - 9:00 AM</td>
+                            <td>2.5 hours</td>
+                            <td>120</td>
+                            <td>
+                                <button class="btn btn-primary register-btn" onclick="showRegistrationForm('english-lit')">
+                                    Register
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Modal -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Test Registration Form</h3>
+                <span class="close-btn" onclick="closeRegistrationForm()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="test-info" id="testInfo">
+                    <!-- Test information will be populated here -->
+                </div>
+                <form class="registration-form" id="registrationForm" onsubmit="handleRegistration(event)">
+                    <div class="form-group">
+                        <label for="studentName">Full Name *</label>
+                        <input type="text" id="studentName" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentIdReg">Student ID *</label>
+                        <input type="text" id="studentIdReg" name="studentId" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentEmail">Student Email *</label>
+                        <input type="email" id="studentEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentBranch">Branch *</label>
+                        <select id="studentBranch" name="branch" required>
+                            <option value="">Select Branch</option>
+                            <option value="CSE">Computer Science Engineering (CSE)</option>
+                            <option value="IT">Information Technology (IT)</option>
+                            <option value="CSM">Computer Science and Mathematics (CSM)</option>
+                            <option value="CSD">Computer Science and Design (CSD)</option>
+                            <option value="ECE">Electronics and Communication Engineering (ECE)</option>
+                            <option value="EEE">Electrical and Electronics Engineering (EEE)</option>
+                            <option value="CIVIL">Civil Engineering</option>
+                            <option value="MECH">Mechanical Engineering</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary submit-btn">Submit Registration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="popup" id="successPopup">
+        <div class="popup-content success">
+            <div class="popup-icon">✓</div>
+            <h3>Registration Successful!</h3>
+            <p id="successMessage">You have been successfully registered for the test.</p>
+            <button class="btn btn-primary" onclick="closeSuccessPopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="registration.js"></script>
+</body>
+</html>
